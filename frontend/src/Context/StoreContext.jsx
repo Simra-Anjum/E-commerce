@@ -4,7 +4,6 @@ import axios from "axios";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-
     const url = "http://localhost:4000"
     const [product_list, setProductList] = useState([]);
     const [cartItems, setCartItems] = useState({});

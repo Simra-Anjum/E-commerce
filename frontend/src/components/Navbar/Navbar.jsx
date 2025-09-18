@@ -29,7 +29,14 @@ const Navbar = ({ setShowLogin }) => {
         <a href='#app-download' onClick={() => { setMenu("mob-app"); setIsOpen(false); }} className={`${menu === "mob-app" ? "active" : ""}`}>Mobile App</a>
         <a href='#footer' onClick={() => { setMenu("contact"); setIsOpen(false); }} className={`${menu === "contact" ? "active" : ""}`}>Contact Us</a>
 
-       
+        {!token ? (
+    <button className="mobile-signin" onClick={() => { setShowLogin(true); setIsOpen(false); }}>Sign In</button>
+  ) : (
+    <>
+      <li onClick={() => { navigate('/myorders'); setIsOpen(false); }}>Orders</li>
+      <li onClick={() => { logout(); setIsOpen(false); }}>Logout</li>
+    </>
+  )}
       
       </ul>
 
