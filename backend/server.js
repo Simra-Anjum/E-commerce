@@ -12,7 +12,7 @@ const port = process.env.PORT || 4000;
 
 
 app.use(cors({
-  origin: "https://craze-xuik.onrender.com/",  
+  origin: "https://craze-xuik.onrender.com",  
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
