@@ -12,7 +12,7 @@ const ProductItem = ({ image, name, price, desc , id }) => {
         <div className='product-item'>
             <div className='product-item-img-container'>
                 <img className='product-item-image' src={url+"/images/"+image} alt="" />
-               {!cartItems?.[id]  // ✅ safe access
+               {!cartItems?.[id]  
   ? <img className='add' onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
   : <div className="product-item-counter">
       <img src={assets.remove_icon_red} onClick={() => removeFromCart(id)} alt="" />
