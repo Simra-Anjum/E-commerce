@@ -5,7 +5,7 @@ import { StoreContext } from '../../Context/StoreContext'
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-  const [isOpen, setIsOpen] = useState(false); // mobile menu toggle
+  const [isOpen, setIsOpen] = useState(false); 
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
   const navigate = useNavigate();
 
