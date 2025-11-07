@@ -25,16 +25,16 @@ const Navbar = ({ setShowLogin }) => {
   
       <ul className={`navbar-menu ${isOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => { setMenu("home"); setIsOpen(false); }} className={`${menu === "home" ? "active" : ""}`}>Home</Link>
-        <a href='#explore-menu' onClick={() => { setMenu("menu"); setIsOpen(false); }} className={`${menu === "menu" ? "active" : ""}`}>Category</a>
-        <a href='#app-download' onClick={() => { setMenu("mob-app"); setIsOpen(false); }} className={`${menu === "mob-app" ? "active" : ""}`}>Mobile App</a>
-        <a href='#footer' onClick={() => { setMenu("contact"); setIsOpen(false); }} className={`${menu === "contact" ? "active" : ""}`}>Contact Us</a>
+        <Link to="#explore-menu" onClick={() => { setMenu("menu"); setIsOpen(false); }} className={`${menu === "menu" ? "active" : ""}`}>Category</Link>
+        <Link to="#app-download"  onClick={() => { setMenu("mob-app"); setIsOpen(false); }} className={`${menu === "mob-app" ? "active" : ""}`}>Mobile App</Link>
+         <Link to="#footer" onClick={() => { setMenu("contact"); setIsOpen(false); }} className={`${menu === "contact" ? "active" : ""}`}>Contact Us</Link>
 
         {!token ? (
     <button className="mobile-signin" onClick={() => { setShowLogin(true); setIsOpen(false); }}>Sign In</button>
   ) : (
     <>
-      <li onClick={() => { navigate('/myorders'); setIsOpen(false); }}>Orders</li>
-      <li onClick={() => { logout(); setIsOpen(false); }}>Logout</li>
+        <Link to="/myorders" onClick={() => { setMenu("order"); setIsOpen(false); }} className={`${menu === "order" ? "active" : ""}`}>Order</Link>
+      
     </>
   )}
       
